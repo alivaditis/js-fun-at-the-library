@@ -24,8 +24,15 @@ function listTitles(shelfName) {
   return(titles)
 }
 
-function searchShelf() {
-  
+function searchShelf(shelfName, title) {
+  var includes;
+  for (var i = 0; i < shelfName.length; i++) {
+    if (shelfName[i].title === title) {
+      includes = true
+    } else {
+      includes = false
+    }
+  } return includes
 }
 
 module.exports = {
