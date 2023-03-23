@@ -1,13 +1,14 @@
 function createTitle(title) {
-  return `The ${title}`;  
+  bookTitle = `The ${title}`;
+  return bookTitle;  
 }
 
 function buildMainCharacter(name, age, pronouns) {
-  mainCharacter = {};
-  mainCharacter.name = name;
-  mainCharacter.age = age;
-  mainCharacter.pronouns = pronouns;
-  return mainCharacter;
+  bookCharacter = {};
+  bookCharacter.name = name;
+  bookCharacter.age = age;
+  bookCharacter.pronouns = pronouns;
+  return bookCharacter;
 }
 
 function saveReview(reviewContent, reviewArray) {
@@ -16,11 +17,29 @@ function saveReview(reviewContent, reviewArray) {
   }
 }
 
+function calculatePageCount(title) {
+  var bookPageCount = bookTitle.length * 20;
+  return bookPageCount;
+}
+
+function writeBook(title, character, bookGenre) {
+  var book = {}
+  book.title = bookTitle;
+  book.mainCharacter = bookCharacter;
+  book.pageCount = calculatePageCount(title);
+  book.genre = bookGenre;
+  return book;
+}
+
+function editBook() {
+
+}
+
 module.exports = {
   createTitle,
   buildMainCharacter,
   saveReview,
-  // calculatePageCount,
-  // writeBook,
-  // editBook
+  calculatePageCount,
+  writeBook,
+  editBook
 }
